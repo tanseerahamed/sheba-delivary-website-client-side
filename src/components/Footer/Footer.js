@@ -1,0 +1,13 @@
+import React from 'react';
+import './Footer.css';
+
+const Footer = () => {
+    return (
+        <footer>
+        <h2> <span class="color">SHEBA</span></h2>
+        <p>GET EXPERT PROFESSIONAL SERVICES AT HOME</p>
+        </footer>
+    );
+};
+
+export default Footer;

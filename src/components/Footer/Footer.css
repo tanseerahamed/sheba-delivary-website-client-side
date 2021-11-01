@@ -1,0 +1,17 @@
+footer{
+    padding: 40px 0;
+    background: black;
+    text-align: center;
+}
+footer h2{
+    font-weight: 900;
+    color: antiquewhite;
+}
+footer p{
+    margin-bottom: 0;
+    font-size: 14px;
+    color: yellowgreen;
+}
+.color{
+    color: #0DA6F9;
+}

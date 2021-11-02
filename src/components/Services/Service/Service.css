@@ -1,0 +1,14 @@
+.single-member img{
+    width: 80%;
+}
+
+.single-member:hover{
+        background-color: lightcyan;
+        box-shadow: 4px 4px 7px gray;
+        border-radius: 10px;
+        border: 5px solid;
+        border-image: linear-gradient(180deg, rgb(121, 121, 233), cyan);
+        border-image-slice: 1;
+        transform: scale(1.03);
+        transition: transform 1s ease-in-out;
+}

@@ -5,14 +5,14 @@ import './Services.css';
 const Services = () => {
     const [services, setServices] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://agile-sands-48232.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data));
     }, [])
 
     return (
         <div id="services">
-            <h2 className="text-primary mt-5">Our services</h2>
+            <h2 className="text-primary fw-bold fs-1">OUR SERVICES</h2>
             <div className="service-container">
                 {
                     services.map(service => <Service

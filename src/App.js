@@ -13,6 +13,7 @@ import AddService from './components/AddService/AddService';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Booking from './components/Booking/Booking';
 import ManageServices from './components/ManageServices/ManageServices';
+import BookingConfirmed from './components/BookingConfirmed/BookingConfirmed';
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
       <PrivateRoute path="/booking/:_id">
               <Booking></Booking>
       </PrivateRoute>
+      <Route path="/bookingConfirmed">
+      <BookingConfirmed></BookingConfirmed>
+      </Route>
       <Route path='/manageServices'>
       <ManageServices></ManageServices>
       </Route>

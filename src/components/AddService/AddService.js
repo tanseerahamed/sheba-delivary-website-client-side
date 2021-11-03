@@ -8,7 +8,7 @@ const AddService = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/services', data)
+        axios.post('https://agile-sands-48232.herokuapp.com/services', data)
         .then(res => {
             if (res.data.insertedId) {
                 alert('added successfully');
@@ -18,7 +18,7 @@ const AddService = () => {
     }
     return (
         <div className="add-service">
-            <h2>Please Add a Service</h2>
+            <h2 className="fs-1 fw-bold">PLEASE ADD A SERVICE</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
             <input {...register("name", { required: true})} placeholder="Name" />
             <textarea {...register("description")} placeholder="Description" />

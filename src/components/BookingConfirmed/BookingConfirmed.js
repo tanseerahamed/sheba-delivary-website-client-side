@@ -1,11 +1,53 @@
 import React from 'react';
+import { useForm } from 'react-hook-form';
+import useAuth from '../../hooks/useAuth';
+import { clearTheCart, getStoredCart } from '../Utilities/fakedb.js';
+import './BookingConfirmed.css';
+
 
 const BookingConfirmed = () => {
+    const { register, handleSubmit, reset , formState: { errors } } = useForm();
+    const { user } = useAuth();
+
+    const onSubmit = data => {
+        const savedCart = getStoredCart();
+        data.order = savedCart;
+
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                if (result.insertedId) {
+                    alert('Order processed Successfully');
+                    clearTheCart();
+                    reset();
+                }
+            })
+    };
+
     return (
         <div>
-            <img className="mt-2 img-fluid" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ4kI6r1nPUXmCm7reoUUXSVj_fU9M5sNbVuUspG42CBaS2r0TxYMLu7XD4HxG7X8ZXYA&usqp=CAU" alt="" />
-            <h1>Congratulations! Your order is confirmed.</h1>
-            <p>We will soon contact with you.</p>
+            <h2 className="text-primary fw-bold fs-1 text-center">PLACE YOUR ORDER</h2>
+        <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
+
+            <input defaultValue={user.displayName} {...register("name")} />
+
+            <input defaultValue={user.email} {...register("email", { required: true })} />
+
+            {errors.email && <span className="error">This field is required</span>}
+            <input placeholder="Address" defaultValue="" {...register("address")} />
+
+            <input placeholder="City" defaultValue="" {...register("city")} />
+
+            <input placeholder="phone number" defaultValue="" {...register("phone")} />
+
+            <input className="btn btn-success" type="submit" />
+        </form>
         </div>
     );
 };

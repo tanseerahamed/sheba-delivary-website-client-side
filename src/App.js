@@ -14,6 +14,7 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Booking from './components/Booking/Booking';
 import ManageServices from './components/ManageServices/ManageServices';
 import BookingConfirmed from './components/BookingConfirmed/BookingConfirmed';
+import Orders from './components/Orders/Orders';
 
 
 function App() {
@@ -37,6 +38,9 @@ function App() {
       </Route>
       <PrivateRoute path="/booking/:_id">
               <Booking></Booking>
+      </PrivateRoute>
+      <PrivateRoute path="/orders">
+            <Orders></Orders>
       </PrivateRoute>
       <Route path="/bookingConfirmed">
       <BookingConfirmed></BookingConfirmed>

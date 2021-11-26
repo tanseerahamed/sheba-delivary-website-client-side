@@ -2,7 +2,7 @@ Website Title: SHEBA || Your First Choice
 
 Website Link: https://delivary-website-client-side.web.app/
 
-Code Link: tourism-or-delivery-website-client-side-tanseerahamed
+Code Link: https://github.com/tanseerahamed/sheba-delivary-website-client-side
 
 •	Focus: focused on delivery related services. This is a full-stack website using React, firebase, react router, node, express, mongodb etc.
 
